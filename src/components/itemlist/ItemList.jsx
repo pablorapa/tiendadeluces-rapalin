@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './Item'
-import prodImg1 from '../assets/vela1.png'
-import prodImg2 from '../assets/vela2.png'
+import prodImg1 from '../../assets/vela1.png'
+import prodImg2 from '../../assets/vela2.png'
 
 
 const ItemList = () => {
