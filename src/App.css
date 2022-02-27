@@ -3,10 +3,19 @@
 }
 
 .App-header {
-  background-color: #f2dbdb;
+  background-color: #f2e1dc;
 }
 
 .brand-title {
   font-weight: 450;
   font-size: calc(10px + 2vmin);
+}
+
+.shoping-cart {
+  color: rgba(0,0,0,.55)
+}
+
+a:link {
+  text-decoration: none;
+  cursor: default;
 }
