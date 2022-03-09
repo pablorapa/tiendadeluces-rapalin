@@ -7,7 +7,7 @@ function App() {
     name: 'Maria'
   };
   return (
-    <div>
+    <div className="bg-red-50 min-h-screen">
       <NavBar/>
       <ItemListContainer greeting={user}/>
     </div>
