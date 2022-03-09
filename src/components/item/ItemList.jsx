@@ -14,6 +14,8 @@ const ItemList = () => {
           imageSrc: prodImg1,
           imageAlt: "Vela decorativa.",
           price: '$ 300',
+          stock: 10,
+          initial: 1,
         },
         {
             id: 2,
@@ -22,6 +24,8 @@ const ItemList = () => {
             imageSrc: prodImg2,
             imageAlt: "Vela con apagavela.",
             price: '$ 380',
+            stock: 4,
+            initial: 1,
           }
       ]
 

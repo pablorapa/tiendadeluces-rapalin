@@ -1,5 +1,5 @@
 import './App.css';
-import ItemListContainer from './components/itemlist/ItemListContainer';
+import ItemListContainer from './components/item/ItemListContainer';
 import NavBar from './components/navbar/NavBar';
 
 function App() {
