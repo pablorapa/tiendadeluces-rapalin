@@ -24,8 +24,8 @@ const ItemList = () => {
             imageSrc: prodImg2,
             imageAlt: "Vela con apagavela.",
             price: '$ 380',
-            stock: 4,
-            initial: 1,
+            stock: 0,
+            initial: 0,
           }
       ]
 
