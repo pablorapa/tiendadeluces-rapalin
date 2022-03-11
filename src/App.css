@@ -1,14 +1,7 @@
-.App-logo {
-  padding-right: 10px;
-}
+/* navbar */
 
 .App-header {
   background-color: #f2e1dc;
-}
-
-.brand-title {
-  font-weight: 450;
-  font-size: calc(10px + 2vmin);
 }
 
 .shoping-cart {
@@ -19,3 +12,5 @@ a:link {
   text-decoration: none;
   cursor: default;
 }
+
+/* item */
