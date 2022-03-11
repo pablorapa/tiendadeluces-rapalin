@@ -14,7 +14,6 @@ const ItemDetailContainer = ({id}) => {
     });
 
     useEffect(()=> {
-        console.log(`entre al effect con id; ${id}`)
         setLoaded(false);
         promiseMock.then((result) => {
             setProduct(result);
