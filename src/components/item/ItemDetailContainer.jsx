@@ -4,27 +4,34 @@ import Spinner from '../common/Spinner';
 import { getProduct } from '../fakeApi/products';
 
 const ItemDetailContainer = ({id}) => {
-    const [ product, setProduct ] = useState({});
+    const [ item, setItem ] = useState({});
     const [ loaded, setLoaded ] = useState(false);
 
-    const promiseMock = new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve(getProduct(id));
-        }, 2000)
-    });
+    const getItem = () => {
+        return new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                resolve(getProduct(id));
+            }, 2000)
+        });
+    };
 
     useEffect(()=> {
         setLoaded(false);
-        promiseMock.then((result) => {
-            setProduct(result);
-        }).finally(() => {
+        getItem()
+        .then((result) => {
+            setItem(result);
+        })
+        .catch((error) => {
+            throw error
+        })
+        .finally(() => {
             setLoaded(true);
         });        
     }, [id]);
 
     return (
         <>
-            {loaded ? <ItemDetail product={product}/> : <Spinner /> }
+            {loaded ? <ItemDetail item={item}/> : <Spinner /> }
         </>   
     )
 }
