@@ -10,7 +10,7 @@ const CartWidget = ({qty=0}) => {
         />
         <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{qty}</span>
       </a>
-  </div>
+    </div>
   )
 }
 
