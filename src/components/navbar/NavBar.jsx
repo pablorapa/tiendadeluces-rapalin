@@ -1,69 +1,118 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-import CartWidget from "./CartWidget"
+import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
+import Dropdown from "./Dropdown";
+import { Disclosure } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const NavBar = () => {
+  const mobileNavigation = [
+    {
+      name: "Inicio",
+      ref: "/",
+    },
+    {
+      name: "Velas",
+      ref: "category/velas",
+    },
+    {
+      name: "Jabones",
+      ref: "category/jabones",
+    },
+    {
+      name: "Varios",
+      ref: "category/varios",
+    },
+    {
+      name: "Contactenos",
+      ref: "/contact",
+    },
+  ];
+
+  const links = [
+    {
+      name: "Velas",
+      ref: "category/velas",
+    },
+    {
+      name: "Jabones",
+      ref: "category/jabones",
+    },
+    {
+      name: "Varios",
+      ref: "category/varios",
+    },
+  ];
+
   return (
-    <nav className="px-2 sm:px-4 py-2.5 App-header">
-      <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="#" className="flex">
-          <img src={logo}
-            width="100"
-            height="55"
-            alt=""
-          />
-        </a>
-        <button
-          data-collapse-toggle="mobile-menu"
-          type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          aria-controls="mobile-menu-2"
-          aria-expanded="false"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <svg
-            className="hidden w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </button>
-        <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
-          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-            <li>
-              <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-transparent hover:text-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-grey-400 md:p-0">
-                Productos
-              </a>
-            </li>
-            <li>
-              <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-transparent hover:text-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-grey-400 md:p-0">
-                Contactenos
-              </a>
-            </li>
-            <li>
-              <CartWidget />
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Disclosure as="nav" className="bg-gray-800">
+      {({ open }) => (
+        <>
+          <nav className="px-2 sm:px-4 py-2.5 App-header">
+            <div className="container flex flex-wrap justify-between items-center mx-auto">
+              <Link to="/" className="flex">
+                <img src={logo} width="100" height="55" alt="alba tienda de luces" />
+              </Link>
+              <div className="absolute right-0 flex items-center sm:hidden">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  {open ? (
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="hidden w-full md:block md:w-auto">
+                <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                  <li>
+                    <Link
+                      to="/"
+                      className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-transparent hover:text-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-grey-400 md:p-0"
+                    >
+                      Inicio
+                    </Link>
+                  </li>
+                  <li>
+                    <Dropdown
+                      buttonName="Productos"
+                      to="/products"
+                      links={links}
+                      buttonClass="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-transparent hover:text-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-grey-400 md:p-0"
+                    />
+                  </li>
+                  <li>
+                    <Link
+                      to="/contact"
+                      className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-transparent hover:text-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-grey-400 md:p-0"
+                    >
+                      Contactenos
+                    </Link>
+                  </li>
+                  <li>
+                    <CartWidget />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <Disclosure.Panel className="sm:hidden App-header h-screen">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {mobileNavigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  className="block px-3 py-2 rounded-md text-base text-center font-medium"
+                >
+                  <Link to={item.ref}> {item.name} </Link>
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   );
 };
 
