@@ -17,21 +17,6 @@ const Dropdown = ({buttonName, buttonClass, links}) => {
     setDropdownPopoverShow(false);
   };
 
-  const handleClick = () => {
-    closeDropdownPopover();
-  };
-
-  useEffect(()=>{
-      
-      
-        window.addEventListener('click', handleClick)
-
-        return (()=>{
-            window.removeEventListener('click', handleClick)
-        })
-
-  }, [])
-
   return (
     <>
       <div className="flex flex-wrap"

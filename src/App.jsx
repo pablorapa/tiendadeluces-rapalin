@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import NotFound from './components/common/NotFound';
 import Contact from './components/common/Contact';
+import Cart from './components/cart/Cart';
 
 function App() {
   const user = {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/category/:id" element={ <ItemListContainer/> } />
           <Route path="/item/:id" element={ <ItemDetailContainer/> }/>
           <Route path="/contact" element={ <Contact/> }/>
+          <Route path="/cart" element={ <Cart/> }/>
           <Route path="*" element={ <NotFound/>}/>
         </Routes>
       </div>

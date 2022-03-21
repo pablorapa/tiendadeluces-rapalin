@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const ItemCount = ({stock=0, initial=0, onAdd}) => {
-    const [qty, setQty] = useState(initial);
+const ItemCount = ({stock=0, initial=0, qty, setQty, handleAddCart}) => {
 
     return (
         <>
@@ -18,7 +17,7 @@ const ItemCount = ({stock=0, initial=0, onAdd}) => {
                     </svg>
                 </button>
             </div>
-            <button type="submit" onClick={() => stock !== 0 && onAdd(qty)} disabled={stock === 0} className="mt-5 w-full bg-slate-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:border-gray-500 disabled:bg-slate-500">
+            <button type="submit" onClick={handleAddCart} disabled={stock === 0} className="mt-5 w-full bg-slate-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:border-gray-500 disabled:bg-slate-500">
                 Agregar al carrito
             </button>
         </>
