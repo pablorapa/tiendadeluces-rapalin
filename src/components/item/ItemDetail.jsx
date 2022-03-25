@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({item}) => {
 
@@ -8,7 +9,7 @@ const ItemDetail = ({item}) => {
 
     const [qty, setQty] = useState(initial);
 
-    const [ itemInCart, setItemInCart ] = useState(false);
+    const { addItem , isInCart} = useContext(CartContext);
 
     const handleAddCart = () => {
         const itemToCart = {
@@ -17,7 +18,7 @@ const ItemDetail = ({item}) => {
             price,
             qty
         }
-        setItemInCart(true);
+        addItem(itemToCart);
         console.log(`se agrego el siguiente item al carrito ${JSON.stringify(itemToCart)}`);
     }
 
@@ -41,7 +42,7 @@ const ItemDetail = ({item}) => {
             <p className="mt-1 mb-4 text-sm text-gray-500">Stock disponible: {stock}</p>
             <div className="mt-8">
                 {
-                    itemInCart ?
+                    isInCart(id) ?
                         <>
                             <div className="flex justify-center items-center m-1 font-medium py-1 px-2 bg-white rounded-md text-green-700 bg-green-100 border border-green-400">
                                 <div slot="avatar">
