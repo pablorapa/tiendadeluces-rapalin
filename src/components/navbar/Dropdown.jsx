@@ -1,7 +1,6 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
 import { Link } from 'react-router-dom'
-import { useEffect } from "react";
 
 const Dropdown = ({buttonName, buttonClass, links}) => {
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
