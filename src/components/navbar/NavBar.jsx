@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-import CartWidget from "./CartWidget";
+import CartWidget from "../cart/CartWidget";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import { Disclosure } from "@headlessui/react";
@@ -11,6 +11,10 @@ const NavBar = () => {
     {
       name: "Inicio",
       ref: "/",
+    },
+    {
+      name: "Carrito",
+      ref: "/cart"
     },
     {
       name: "Velas",
@@ -46,7 +50,7 @@ const NavBar = () => {
   ];
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav">
       {({ open }) => (
         <>
           <nav className="px-2 sm:px-4 py-2.5 App-header">

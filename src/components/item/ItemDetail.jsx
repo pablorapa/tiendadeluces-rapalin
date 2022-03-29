@@ -16,10 +16,11 @@ const ItemDetail = ({item}) => {
             id,
             name,
             price,
-            qty
+            qty, 
+            stock,
+            initial
         }
         addItem(itemToCart);
-        console.log(`se agrego el siguiente item al carrito ${JSON.stringify(itemToCart)}`);
     }
 
   return ( 

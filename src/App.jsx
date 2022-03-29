@@ -10,6 +10,7 @@ import {
 import NotFound from './components/common/NotFound';
 import Contact from './components/common/Contact';
 import Cart from './components/cart/Cart';
+import Checkout from './components/cart/Checkout';
 import { CustomContext } from './context/CustomContext';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/item/:id" element={ <ItemDetailContainer/> }/>
             <Route path="/contact" element={ <Contact/> }/>
             <Route path="/cart" element={ <Cart/> }/>
+            <Route path="/checkout" element={ <Checkout/> }/>
             <Route path="*" element={ <NotFound/>}/>
           </Routes>
         </div>
