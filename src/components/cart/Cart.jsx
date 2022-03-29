@@ -8,7 +8,7 @@ const Cart = () => {
   const { itemsTotal, itemsAmount, cart, clear } = useContext(CartContext);
 
   return (
-    <div className="bg-rose-50">
+    <div className="bg-rose-50 min-h-[calc(100vh_-_22rem)]">
       {
         cart.length ? 
 
