@@ -3,7 +3,7 @@ import ItemList from './ItemList';
 import Spinner from '../common/Spinner';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { getProducts } from '../helpers/products'
+import { getProducts } from '../helpers/products';
 
 const ItemListContainer = ({greeting={}}) => {
   const [loaded, setLoaded ] = useState(false);
@@ -14,9 +14,8 @@ const ItemListContainer = ({greeting={}}) => {
 
   useEffect(()=>{
     setLoaded(false);
-    
+
     getProducts(id)
-    .then(res => res.json())
     .then((result) => {
       result.length ? setProducts(result) : setProducts([]);
     })

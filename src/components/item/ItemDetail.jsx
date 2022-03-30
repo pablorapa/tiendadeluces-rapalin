@@ -5,7 +5,7 @@ import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({item}) => {
 
-    const { id, name, price, description, stock, initial, details}  = item;
+    const { id, name, price, description, stock, initial, details, imageAlt, imageSrc}  = item;
 
     const [qty, setQty] = useState(initial);
 
@@ -18,7 +18,9 @@ const ItemDetail = ({item}) => {
             price,
             qty, 
             stock,
-            initial
+            initial,
+            imageSrc,
+            imageAlt
         }
         addItem(itemToCart);
     }
@@ -30,9 +32,9 @@ const ItemDetail = ({item}) => {
           <div className="lg:pr-8">
             <div className="w-full h-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img
-                    src={`/products/prod${id}.png`}
+                    src={imageSrc}
                     className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                    alt={name}
+                    alt={imageAlt}
                 />
             </div>
           </div>

@@ -1,12 +1,17 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import logo from "../../assets/logo.png";
 import CartWidget from "../cart/CartWidget";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { getCategories } from "../helpers/products";
 
 const NavBar = () => {
+
+  const [ categories, setCategories ] = useState([]);
+  const [ links, setLinks ] = useState([]);
+
   const mobileNavigation = [
     {
       name: "Inicio",
@@ -16,38 +21,34 @@ const NavBar = () => {
       name: "Carrito",
       ref: "/cart"
     },
-    {
-      name: "Velas",
-      ref: "category/velas",
-    },
-    {
-      name: "Jabones",
-      ref: "category/jabones",
-    },
-    {
-      name: "Varios",
-      ref: "category/varios",
-    },
+    ...links,
     {
       name: "Contactenos",
       ref: "/contact",
     },
   ];
 
-  const links = [
-    {
-      name: "Velas",
-      ref: "category/velas",
-    },
-    {
-      name: "Jabones",
-      ref: "category/jabones",
-    },
-    {
-      name: "Varios",
-      ref: "category/varios",
-    },
-  ];
+
+  useEffect(()=> {
+    getCategories()
+        .then((result) => {             
+            setCategories(result);
+        })
+        .catch((e) => {
+            console.log(`Se produjo este error: ${e}`)
+            throw e
+        })       
+  }, []);
+
+  useEffect(()=> {
+    setLinks(categories.map(category => (
+      {
+        name: category.name,
+        ref: `category/${category.id}`
+      }
+    )))
+  }, [categories]);
+
 
   return (
     <Disclosure as="nav">

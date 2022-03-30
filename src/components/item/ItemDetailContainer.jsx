@@ -13,10 +13,9 @@ const ItemDetailContainer = () => {
 
     useEffect(()=> {
         setLoaded(false);
-        getProduct(Number(id))
-            .then(res => res.json())
-            .then((result) => {                
-                setItem(result[0]);
+        getProduct(id)
+            .then((result) => {             
+                setItem(result);
             })
             .catch((e) => {
                 console.log(`Se produjo este error: ${e}`)

@@ -5,7 +5,7 @@ import { CartContext } from '../../context/CartContext'
 
 export const CartItem = ({item}) => {
 
-    const {name, id, price, qty, stock, initial} = item;
+    const {name, id, price, qty, stock, initial, imageSrc, imageAlt} = item;
 
     const { removeItem, replaceItemQty } = useContext(CartContext);
 
@@ -17,9 +17,9 @@ export const CartItem = ({item}) => {
     <li className="flex py-6">
         <Link to={`/item/${id}`} className="hidden h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 md:block">
             <img
-                src={`/products/prod${id}.png`}
-                alt={name}
-                className="h-full w-full object-cover object-center"
+                src={imageSrc}
+                alt={imageAlt}
+                className="h-full w-full object-cove    r object-center"
             />
         </Link>
 

@@ -1,9 +1,33 @@
-const API_URL = 'https://6234f068ca22991339d8a978.mockapi.io/tiendadeluces/v1'
+import { collection, getDocs, where, query, getDoc, doc, limit } from 'firebase/firestore';
+import { db } from '../../utils/firebase';
 
-export function getProducts(categoryId) {
-    return fetch(`${API_URL}/products${categoryId ? '?category='+categoryId : ''}`);
+export const getProducts = async (categoryId) => {
+    const q = categoryId ? query(collection(db, 'items'), where('category', '==', categoryId), limit(10)) : query(collection(db, 'items'), limit(10));
+    const response = await getDocs(q);
+    return response.docs.map(doc => (
+        {
+        ...doc.data(),
+        id: doc.id,
+        }
+    ));
 }
 
-export function getProduct(id) {
-    return fetch(`${API_URL}/products?id=${id}`);
+export const getProduct = async (id) => {
+    const queryDoc = doc(db, `items/${id}`);
+    const response = await getDoc(queryDoc);
+    return {
+        ...response.data(),
+        id: response.id,
+    }
+}
+
+export const getCategories = async () => {
+    const query = collection(db, 'categories');
+    const response = await getDocs(query);
+    return response.docs.map(doc => (
+        {
+            ...doc.data(),
+            id: doc.id,
+        }
+    ));
 }
