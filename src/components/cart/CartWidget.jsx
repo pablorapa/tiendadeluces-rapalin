@@ -10,7 +10,7 @@ const CartWidget = () => {
   const qty = itemsTotal();
 
   return (
-    <div className="shoping-cart flow-root">
+    <div className="shopping-cart flow-root">
       <Link to="/cart" className="group -m-2 p-2 flex items-center">
         <ShoppingCartIcon
           className="flex-shrink-0 h-6 w-6 group-hover:text-gray-500"

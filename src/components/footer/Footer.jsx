@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 
 const Footer = () => {
     return (
-        <footer className="p-4 App-header sm:p-6">
+        <footer className="p-4 App-footer sm:p-6">
             <div >
                 <div className="mb-6 md:mb-0">
                     <Link to="/" className="flex items-center">

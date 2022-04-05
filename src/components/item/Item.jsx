@@ -7,7 +7,7 @@ const Item = ({item}) => {
 
     return (
         <Link to={`/item/${id}`} key={id} className="group">
-            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img
                 src={imageSrc}
                 className="w-full h-full object-center object-cover lg:w-full lg:h-full"

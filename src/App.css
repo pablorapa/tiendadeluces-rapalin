@@ -4,9 +4,16 @@
   background-color: #f2e1dc;
 }
 
-.shoping-cart {
+.shopping-cart {
   color: rgba(0,0,0,.55)
 }
 
 
-/* item */
+/* footer */
+
+.App-footer {
+  background-color: #f2e1dc;
+}
+
+
+/* general */
