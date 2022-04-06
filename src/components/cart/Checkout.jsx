@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext'
 import { ErrorContext } from '../../context/ErrorContext';
 import { generateOrder } from '../services/orders';
@@ -10,6 +11,7 @@ const Checkout = () => {
     const { cart, itemsTotal, removeItem, itemsAmount, clear } = useContext(CartContext);
     const { handleError } = useContext(ErrorContext);
     const [orderId, setOrderId] = useState(null);
+    const navigate = useNavigate();
 
 
     const handleSubmit = async(buyer) => {
@@ -18,6 +20,12 @@ const Checkout = () => {
                 handleError(e);
             });
     }
+
+    useEffect(()=>{
+        if (!cart.length) 
+            navigate("/");
+    })
+
 
     return (
         orderId ?
