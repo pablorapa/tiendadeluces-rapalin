@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CartContext } from './CartContext'
 
-export const CustomContext = ({ children }) => {
+export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const addItem = (item) => {
@@ -31,14 +31,16 @@ export const CustomContext = ({ children }) => {
 
     const replaceItemQty = (id, qty) => {
         const newCart = [...cart];
-        const itemIndex = newCart.findIndex(product => product.id == id);
+        const itemIndex = newCart.findIndex(product => product.id === id);
         newCart[itemIndex].qty = qty;
         setCart(newCart)
     }
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, itemsTotal, itemsAmount, replaceItemQty }}>
-            {children}
-        </CartContext.Provider>
+        <>
+            <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, itemsTotal, itemsAmount, replaceItemQty }}>
+                {children}
+            </CartContext.Provider>
+        </>
     )
 }

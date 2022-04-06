@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ItemCount = ({stock=0, initial=0, qty, setQty, handleAddCart, isButtonVisible = true}) => {
+const ItemCount = ({stock=0, initial=0, qty=0, setQty, handleAddCart, isButtonVisible = true}) => {
 
     return (
         <>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ItemDetail from './ItemDetail';
 import Spinner from '../common/Spinner';
-import { getProduct } from '../helpers/products';
+import { getProduct } from '../services/products';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -18,7 +18,6 @@ const ItemDetailContainer = () => {
                 setItem(result);
             })
             .catch((e) => {
-                console.log(`Se produjo este error: ${e}`)
                 throw e
             })
             .finally(() => {

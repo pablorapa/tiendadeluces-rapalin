@@ -3,7 +3,7 @@ import ItemList from './ItemList';
 import Spinner from '../common/Spinner';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { getProducts } from '../helpers/products';
+import { getProducts } from '../services/products';
 
 const ItemListContainer = ({greeting={}}) => {
   const [loaded, setLoaded ] = useState(false);
@@ -21,7 +21,6 @@ const ItemListContainer = ({greeting={}}) => {
     })
     .catch(e=>{
       setProducts([]);
-      console.log(`Se produjo un error: ${e}`)
     })
     .finally(() => {
       setLoaded(true);

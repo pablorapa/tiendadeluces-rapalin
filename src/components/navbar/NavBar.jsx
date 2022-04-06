@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { getCategories } from "../helpers/products";
+import { getCategories } from "../services/products";
 
 const NavBar = () => {
 
@@ -35,7 +35,6 @@ const NavBar = () => {
             setCategories(result);
         })
         .catch((e) => {
-            console.log(`Se produjo este error: ${e}`)
             throw e
         })       
   }, []);
@@ -59,7 +58,7 @@ const NavBar = () => {
               <Link to="/" className="flex">
                 <img src={logo} width="100" height="55" alt="alba tienda de luces" />
               </Link>
-              <div className="absolute right-0 flex items-center sm:hidden">
+              <div className="absolute right-0 flex items-center md:hidden lg:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -68,7 +67,7 @@ const NavBar = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="hidden w-full md:block md:w-auto">
+              <div className="hidden lg:block lg:w-auto md:block md:w-auto">
                 <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                   <li>
                     <Link
@@ -102,7 +101,7 @@ const NavBar = () => {
             </div>
           </nav>
 
-          <Disclosure.Panel className="sm:hidden App-header h-screen">
+          <Disclosure.Panel className="lg:hidden md:hidden App-header h-screen">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {mobileNavigation.map((item) => (
                 <Disclosure.Button
