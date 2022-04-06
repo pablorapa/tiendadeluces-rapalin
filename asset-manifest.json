@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/tiendadeluces-rapalin/static/css/main.f6e2a5e0.css",
+    "main.js": "/tiendadeluces-rapalin/static/js/main.27a76c7b.js",
+    "static/js/787.c13bbf8e.chunk.js": "/tiendadeluces-rapalin/static/js/787.c13bbf8e.chunk.js",
+    "static/media/logo.png": "/tiendadeluces-rapalin/static/media/logo.b4df4d4ad46ea767f14c.png",
+    "index.html": "/tiendadeluces-rapalin/index.html",
+    "main.f6e2a5e0.css.map": "/tiendadeluces-rapalin/static/css/main.f6e2a5e0.css.map",
+    "main.27a76c7b.js.map": "/tiendadeluces-rapalin/static/js/main.27a76c7b.js.map",
+    "787.c13bbf8e.chunk.js.map": "/tiendadeluces-rapalin/static/js/787.c13bbf8e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6e2a5e0.css",
+    "static/js/main.27a76c7b.js"
+  ]
+}
