@@ -4,7 +4,7 @@ import { CartContext } from '../../context/CartContext'
 import { ErrorContext } from '../../context/ErrorContext';
 import { generateOrder } from '../services/orders';
 import CheckoutForm from './CheckoutForm';
-import SuccessfulPage from './SuccessfulPage';
+import SuccessfulPage from '../common/SuccessfulPage';
 
 const Checkout = () => {
 
@@ -22,8 +22,8 @@ const Checkout = () => {
     }
 
     useEffect(()=>{
-        if (!cart.length) 
-            navigate("/");
+        if (!cart.length && !orderId) 
+            navigate("/cart");
     })
 
 

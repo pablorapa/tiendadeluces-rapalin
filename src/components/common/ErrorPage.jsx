@@ -10,7 +10,7 @@ const ErrorPage = () => {
 
     useEffect(() => {
         if (!error)
-            navigate("/");
+            navigate("/"); // eslint-disable-next-line
     }, [error]);
 
     return (

@@ -17,9 +17,7 @@ import ErrorPage from './components/common/ErrorPage';
 import { ErrorProvider } from './context/ErrorProvider';
 
 function App() {
-  const user = {
-    name: 'Maria'
-  };
+
   return (
     <CartProvider>
       <BrowserRouter>
@@ -27,7 +25,7 @@ function App() {
           <div className="bg-red-50 min-h-screen">
             <NavBar />
             <Routes>
-              <Route path="/" element={<ItemListContainer greeting={user} />} />
+              <Route path="/" element={<ItemListContainer/>} />
               <Route path="/category/:id" element={<ItemListContainer />} />
               <Route path="/item/:id" element={<ItemDetailContainer />} />
               <Route path="/contact" element={<Contact />} />
