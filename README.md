@@ -59,8 +59,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 
 ### Developed by Pablo Rapalín
-- https://github.com/pablorapa
-- https://www.linkedin.com/in/pablo-rapalin-04641678/
+- [GitHub](https://github.com/pablorapa)
+- [LinkedIn](https://www.linkedin.com/in/pablo-rapalin-04641678/)
 - pablo.rapalin@gmail.com
 ---
 >Final project for the React JS course in [Coderhouse](https://coderhouse.com)
