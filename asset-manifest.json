@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "//pablorapa.github.io/tiendadeluces-rapalin/static/css/main.f6e2a5e0.css",
+    "main.js": "//pablorapa.github.io/tiendadeluces-rapalin/static/js/main.1f93aff2.js",
+    "static/js/787.c13bbf8e.chunk.js": "//pablorapa.github.io/tiendadeluces-rapalin/static/js/787.c13bbf8e.chunk.js",
+    "static/media/logo.png": "//pablorapa.github.io/tiendadeluces-rapalin/static/media/logo.b4df4d4ad46ea767f14c.png",
+    "index.html": "//pablorapa.github.io/tiendadeluces-rapalin/index.html",
+    "main.f6e2a5e0.css.map": "//pablorapa.github.io/tiendadeluces-rapalin/static/css/main.f6e2a5e0.css.map",
+    "main.1f93aff2.js.map": "//pablorapa.github.io/tiendadeluces-rapalin/static/js/main.1f93aff2.js.map",
+    "787.c13bbf8e.chunk.js.map": "//pablorapa.github.io/tiendadeluces-rapalin/static/js/787.c13bbf8e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6e2a5e0.css",
+    "static/js/main.1f93aff2.js"
+  ]
+}
