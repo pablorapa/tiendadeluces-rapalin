@@ -7,7 +7,7 @@ import SuccessfulPage from '../../common/successfulPage/SuccessfulPage';
 import CheckoutForm from '../checkoutForm/CheckoutForm';
 import "./Checkout.css";
 
-const Checkout = () => {
+export const Checkout = () => {
 
     const { cart, itemsTotal, removeItem, itemsAmount, clear } = useContext(CartContext);
     const { handleError } = useContext(ErrorContext);
@@ -80,5 +80,3 @@ const Checkout = () => {
             </div >
     )
 }
-
-export default Checkout

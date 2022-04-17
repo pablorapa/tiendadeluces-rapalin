@@ -7,7 +7,7 @@ import {
 import NotFound from './components/common/notFound/NotFound';
 import Contact from './components/common/contact/Contact';
 import Cart from './components/cart/Cart';
-import Checkout from './components/cart/checkout/Checkout';
+import { Checkout } from './components/cart/checkout/Checkout';
 import { CartProvider } from './context/CartProvider';
 import Footer from './components/footer/Footer';
 import ErrorPage from './components/common/errorPage/ErrorPage';
