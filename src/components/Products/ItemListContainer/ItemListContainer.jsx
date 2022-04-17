@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
-import ItemList from '../ItemList/ItemList';
-import Spinner from '../../common/Spinner/Spinner';
+import ItemList from '../itemList/ItemList';
+import Spinner from '../../common/spinner/Spinner';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getProducts } from '../../../services/products';
 import { CartContext } from '../../../context/CartContext';
-import Breadcrumb from '../Breadcrumb/Breadcrumb';
+import Breadcrumb from '../breadcrumb/Breadcrumb';
 import { ErrorContext } from '../../../context/ErrorContext';
 import "./ItemListContainer.css";
 

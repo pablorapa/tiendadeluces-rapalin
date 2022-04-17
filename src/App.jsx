@@ -1,18 +1,18 @@
-import ItemDetailContainer from './components/products/ItemDetailContainer/ItemDetailContainer';
-import ItemListContainer from './components/products/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/products/itemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './components/products/itemListContainer/ItemListContainer';
 import NavBar from './components/navbar/NavBar';
 import {
   BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
-import NotFound from './components/common/NotFound/NotFound';
-import Contact from './components/common/Contact/Contact';
+import NotFound from './components/common/notFound/NotFound';
+import Contact from './components/common/contact/Contact';
 import Cart from './components/cart/Cart';
-import Checkout from './components/cart/Checkout/Checkout';
+import Checkout from './components/cart/checkout/Checkout';
 import { CartProvider } from './context/CartProvider';
 import Footer from './components/footer/Footer';
-import ErrorPage from './components/common/ErrorPage/ErrorPage';
+import ErrorPage from './components/common/errorPage/ErrorPage';
 import { ErrorProvider } from './context/ErrorProvider';
 
 function App() {

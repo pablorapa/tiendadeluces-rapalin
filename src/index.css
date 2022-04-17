@@ -17,5 +17,5 @@ code {
 }
 
 @layer components {
-  @import "./components/Common/common.css";
+  @import "./components/common/common.css";
 }

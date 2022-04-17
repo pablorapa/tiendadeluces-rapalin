@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
-import SuccessfulPage from '../SuccessfulPage/SuccessfulPage';
+import SuccessfulPage from '../successfulPage/SuccessfulPage';
 import { validateForm } from '../validations';
 import "./Contact.css";
 

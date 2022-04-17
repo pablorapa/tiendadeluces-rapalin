@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail';
-import Spinner from '../../common/Spinner/Spinner';
+import ItemDetail from '../itemDetail/ItemDetail';
+import Spinner from '../../common/spinner/Spinner';
 import { getProduct } from '../../../services/products';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
