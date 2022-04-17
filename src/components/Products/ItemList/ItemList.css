@@ -1,0 +1,12 @@
+.item-list-container {
+    @apply mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8;
+}
+.item-list-no-items-container {
+    @apply flex items-center justify-center
+}
+.item-list-no-items-inner-container {
+    @apply px-40 py-5 mt-20 flex flex-col items-center;
+}
+.item-list-no-items-title {
+    @apply text-2xl mb-8 text-center text-gray-600;
+}

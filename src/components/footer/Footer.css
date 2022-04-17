@@ -1,0 +1,28 @@
+.App-footer {
+    background-color: #f2e1dc;
+    @apply p-4 sm:p-6;
+}
+
+.footer-sn-container {
+    @apply text-right flex justify-end mt-4 space-x-6;
+}
+
+.footer-sn {
+    @apply text-gray-500 hover:text-gray-900;
+}
+
+.footer-rights {
+    @apply text-sm text-gray-700;
+}
+
+.footer-logo-container {
+    @apply mb-6 md:mb-0;
+}
+
+.footer-logo {
+    @apply flex items-center;
+}
+
+.footer-logo-img {
+    @apply mr-3 h-10;
+}

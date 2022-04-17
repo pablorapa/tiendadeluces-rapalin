@@ -1,0 +1,31 @@
+.btn-default {
+    @apply mt-5 w-full bg-slate-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:border-gray-500 disabled:bg-slate-500;
+}
+
+.btn-success {
+    @apply mt-2 w-full bg-emerald-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white;
+}
+
+.btn-default-lg {
+    @apply w-full px-6 py-2 bg-slate-700 border border-transparent rounded-md text-base font-medium text-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:border-gray-500 disabled:bg-slate-500;
+}
+
+.btn-default-sm {
+    @apply px-6 py-3 text-sm font-semibold text-white bg-gray-600 text-center;
+}
+
+.rose-container-full {
+    @apply flex justify-center items-center min-h-[calc(100vh_-_14rem)];
+}
+.form-input {
+    @apply w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600;
+}
+.form-textarea {
+    @apply flex items-center w-full px-4 py-3 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-600;
+}
+.form-input-label {
+    @apply block mb-3 text-sm font-semibold text-gray-500;
+}
+.form-input-error {
+    @apply text-red-500 text-sm ml-1;
+}

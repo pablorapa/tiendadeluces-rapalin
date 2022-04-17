@@ -7,6 +7,10 @@ export const ErrorProvider = ({ children }) => {
 
     const navigate = useNavigate();
 
+    /**
+     * Set error message and navigates to error page
+     * @param {object} error 
+     */
     const handleError = (error) => {
         setError(error.message);
         navigate("/error");
@@ -14,7 +18,7 @@ export const ErrorProvider = ({ children }) => {
 
     return (
         <>
-            <ErrorContext.Provider value={{error, handleError}} >
+            <ErrorContext.Provider value={{ error, handleError }} >
                 {children}
             </ErrorContext.Provider>
         </>

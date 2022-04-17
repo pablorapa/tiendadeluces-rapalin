@@ -5,15 +5,17 @@ Alba is a React SPA app to browse products and add them into a cart 🛒.
 
 ![Alba](alba.gif)
 
+You can find a live demo of this site [here](https://main--tienda-de-luces.netlify.app/)
+
 ## Features
 
 - Building components with React.
 - Functional components, props and dynamic data binding.
 - Working with events and states to create interactive applications.
-- Passing data between components with props (parent to child) and function (child to parent).
+- Passing data between components.
 - Working with lists and conditional content.
 - React Hooks (useState, useEffect, useContext).
-- Fetching data from a RealTime Firebase Database.
+- Fetching and updating data from a Firebase Database.
 - Working with forms and validations.
 - Working with routes using react-router-dom
 
@@ -54,8 +56,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 
 ### Developed by Pablo Rapalín

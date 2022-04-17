@@ -1,0 +1,6 @@
+.checkoutform-form {
+    @apply justify-center w-full mx-auto;
+}
+.checkoutform-field-group {
+    @apply space-x-0 lg:flex lg:space-x-4;
+}

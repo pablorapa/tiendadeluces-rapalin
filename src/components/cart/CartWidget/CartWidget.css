@@ -1,0 +1,9 @@
+.cart-widget-link {
+    @apply -m-2 p-2 flex items-center;
+}
+.cart-widget-icon {
+    @apply flex-shrink-0 h-6 w-6 group-hover:text-gray-500;
+}
+.cart-widget-qty {
+    @apply ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800;
+}

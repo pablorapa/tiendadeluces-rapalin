@@ -1,16 +1,21 @@
-import React, {useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
-import CartWidget from "../cart/CartWidget";
+import CartWidget from "../Cart/CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { getCategories } from "../services/products";
+import { getCategories } from "../../services/products";
+import "./Navbar.css"
+import { CartContext } from "../../context/CartContext";
+import { ErrorContext } from "../../context/ErrorContext";
 
 const NavBar = () => {
 
-  const [ categories, setCategories ] = useState([]);
-  const [ links, setLinks ] = useState([]);
+  const { categories, setCategories } = useContext(CartContext);
+  const { handleError } = useContext(ErrorContext);
+
+  const [links, setLinks] = useState([]);
 
   const mobileNavigation = [
     {
@@ -29,17 +34,17 @@ const NavBar = () => {
   ];
 
 
-  useEffect(()=> {
+  useEffect(() => {
     getCategories()
-        .then((result) => {             
-            setCategories(result);
-        })
-        .catch((e) => {
-            throw e
-        })       
+      .then((result) => {
+        setCategories(result);
+      })
+      .catch((e) => {
+        handleError({message: e.message})
+      })// eslint-disable-next-line
   }, []);
 
-  useEffect(()=> {
+  useEffect(() => {
     setLinks(categories.map(category => (
       {
         name: category.name,
@@ -53,13 +58,13 @@ const NavBar = () => {
     <Disclosure as="nav">
       {({ open }) => (
         <>
-          <nav className="px-2 sm:px-4 py-2.5 App-header">
-            <div className="container flex flex-wrap justify-between items-center mx-auto">
+          <nav className="nav App-header">
+            <div className="nav-container">
               <Link to="/" className="flex">
                 <img src={logo} width="100" height="55" alt="alba tienda de luces" />
               </Link>
-              <div className="absolute right-0 flex items-center md:hidden lg:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              <div className="mobile-menu">
+                <Disclosure.Button className="mobile-menu-btn">
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -67,12 +72,12 @@ const NavBar = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="hidden lg:block lg:w-auto md:block md:w-auto">
-                <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+              <div className="menu-container">
+                <ul className="menu-list">
                   <li>
                     <Link
                       to="/"
-                      className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-transparent hover:text-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-grey-400 md:p-0"
+                      className="menu-option"
                     >
                       Inicio
                     </Link>
@@ -82,13 +87,13 @@ const NavBar = () => {
                       buttonName="Productos"
                       to="/products"
                       links={links}
-                      buttonClass="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-transparent hover:text-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-grey-400 md:p-0"
+                      buttonClass="menu-option"
                     />
                   </li>
                   <li>
                     <Link
                       to="/contact"
-                      className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-transparent hover:text-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-grey-400 md:p-0"
+                      className="menu-option"
                     >
                       Contactenos
                     </Link>
@@ -101,13 +106,13 @@ const NavBar = () => {
             </div>
           </nav>
 
-          <Disclosure.Panel className="lg:hidden md:hidden App-header h-screen">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <Disclosure.Panel className="mobile-menu-panel App-header">
+            <div className="mobile-menu-list">
               {mobileNavigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
-                  className="block px-3 py-2 rounded-md text-base text-center font-medium"
+                  className="mobile-menu-option"
                 >
                   <Link to={item.ref}> {item.name} </Link>
                 </Disclosure.Button>
