@@ -1,6 +1,6 @@
 import ItemDetailContainer from './components/Products/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/Products/ItemListContainer/ItemListContainer';
-import NavBar from './components/Navbar/NavBar';
+import NavBar from './components/navbar/NavBar';
 import {
   BrowserRouter,
   Routes,
