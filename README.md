@@ -1,5 +1,5 @@
 # Alba, tienda de luces - Scented candles e-commerce app
----
+
 
 Alba is a React SPA app to browse products and add them into a cart 🛒.
 
@@ -59,8 +59,8 @@ Your app is ready to be deployed!
 
 
 ### Developed by Pablo Rapalín
-- https://github.com/pablorapa
-- https://www.linkedin.com/in/pablo-rapalin-04641678/
+- [GitHub](https://github.com/pablorapa)
+- [LinkedIn](https://www.linkedin.com/in/pablo-rapalin-04641678/)
 - pablo.rapalin@gmail.com
 ---
 >Final project for the React JS course in [Coderhouse](https://coderhouse.com)
