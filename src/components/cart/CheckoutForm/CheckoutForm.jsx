@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { validateForm } from '../../Common/validations';
+import { validateForm } from '../../common/validations';
 import "./CheckoutForm.css";
 
 const CheckoutForm = ({ submitAction }) => {

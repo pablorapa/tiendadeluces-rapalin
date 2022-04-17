@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../../context/CartContext'
 import { ErrorContext } from '../../../context/ErrorContext';
 import { generateOrder } from '../../../services/orders';
-import SuccessfulPage from '../../Common/SuccessfulPage/SuccessfulPage';
+import SuccessfulPage from '../../common/SuccessfulPage/SuccessfulPage';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 import "./Checkout.css";
 

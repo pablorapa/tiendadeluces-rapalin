@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
-import CartWidget from "../Cart/CartWidget/CartWidget";
+import CartWidget from "../cart/CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import { Disclosure } from "@headlessui/react";
