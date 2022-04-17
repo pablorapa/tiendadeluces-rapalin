@@ -1,6 +1,4 @@
-import ItemDetailContainer from './components/products/itemDetailContainer/ItemDetailContainer';
-import ItemListContainer from './components/products/itemListContainer/ItemListContainer';
-import NavBar from './components/navbar/NavBar';
+import React from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -14,6 +12,9 @@ import { CartProvider } from './context/CartProvider';
 import Footer from './components/footer/Footer';
 import ErrorPage from './components/common/errorPage/ErrorPage';
 import { ErrorProvider } from './context/ErrorProvider';
+import ItemDetailContainer from './components/products/itemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './components/products/itemListContainer/ItemListContainer';
+import NavBar from './components/navbar/NavBar';
 
 function App() {
 
