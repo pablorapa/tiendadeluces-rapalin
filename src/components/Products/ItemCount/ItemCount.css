@@ -1,9 +1,0 @@
-.item-count-container {
-    @apply flex justify-center max-h-6;
-}
-.item-count-buttons {
-    @apply fill-current text-gray-600 w-3;
-}
-.item-count-input {
-    @apply mx-2 border text-center w-8;
-}
